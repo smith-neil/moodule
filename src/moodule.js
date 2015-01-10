@@ -9,9 +9,9 @@
   var moduleDefinitions = {};
 
   return {
-    define : define,
-    require: require,
-    clear: clear
+    define  : define,
+    require : require,
+    clear   : clear
   }
 
   function define(id, dependencies, definition) {
@@ -52,6 +52,7 @@
     }
 
     var obj = definition.fn.apply(undefined, dependencies);
+
     instances[id] = obj;
     delete moduleDefinitions[id];
 
@@ -59,7 +60,7 @@
   }
 
   function clear() {
-    instances = {};
+    instances         = {};
     moduleDefinitions = {};
   }
 
