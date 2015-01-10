@@ -10,7 +10,8 @@
 
   return {
     define : define,
-    require: require
+    require: require,
+    clear: clear
   }
 
   function define(id, dependencies, definition) {
@@ -55,6 +56,11 @@
     delete moduleDefinitions[id];
 
     return obj;
+  }
+
+  function clear() {
+    instances = {};
+    moduleDefinitions = {};
   }
 
   function isFunction (arg) {
