@@ -3,7 +3,7 @@ var gulp   = require('gulp'),
     uglify = require('gulp-uglify');
 
 gulp.task('default', function () {
-  return gulp.src('./src/*.js')
+  return gulp.src(['./src/**/*.js', '!./src/**/*.spec.js'])
     .pipe(gulp.dest('./'))
     .pipe(uglify())
     .pipe(rename({extname: '.min.js'}))
