@@ -1,5 +1,5 @@
 {
-  "name": "moodule",
+  "name": "moodulejs",
   "version": "0.1.0",
   "description": "a small module loader",
   "devDependencies": {
