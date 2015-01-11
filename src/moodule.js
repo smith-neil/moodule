@@ -36,6 +36,17 @@
   }
 
   function require(id) {
+    try {
+      return resolve(id);
+    } catch (e) {
+      if (e instanceof RangeError)
+        throw new Error("moodule says circular dependencies are bad.");
+      else
+        throw e;
+    }
+  }
+
+  function resolve(id) {
     if (has(instances, id)) {
       return instances[id];
     }
@@ -47,7 +58,7 @@
 
     var dependencies = [];
     for (var i = 0; i < definition.dependencies.length; i++) {
-      var dep = require(definition.dependencies[i]);
+      var dep = resolve(definition.dependencies[i]);
       dependencies.push(dep);
     }
 

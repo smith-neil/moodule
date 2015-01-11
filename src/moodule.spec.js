@@ -41,7 +41,7 @@ describe('moodule', function () {
   describe('Describe: require', function () {
 
     it('should throw exception if definition does not exist', function () {
-      expect(function () { module.require('id', {}) }).toThrow();
+      expect(function () { module.require('id') }).toThrow();
     });
 
     it('should return module', function () {
@@ -59,6 +59,13 @@ describe('moodule', function () {
       var theModule = moodule.require('three');
       expect(theModule.a).toBe('1');
       expect(theModule.b).toBe('2');
+    });
+
+    it('should throw exception when loading a circular dependency', function () {
+      moodule.define('one', ['two'], function (two) { return { a: '1', b: two.b }});
+      moodule.define('two', ['one'], function (one) { return { a: one.a, b: '2' }});
+
+      expect(function() { moodule.require('one') }).toThrow(new Error("moodule says circular dependencies are bad."));
     });
 
     it('should return module many times', function () {
