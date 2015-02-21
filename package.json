@@ -1,6 +1,6 @@
 {
   "name": "moodulejs",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "a small module loader",
   "devDependencies": {
     "gulp": "^3.8.10",
