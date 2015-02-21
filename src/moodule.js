@@ -22,7 +22,7 @@
 
     if (!isString(id))
       throw new Error("moodule says the module '" + id + "' is not a string.");
-    if (has(moduleDefinitions, id) || has(instances, id))
+    if (has(moduleDefinitions, id))
       throw new Error("moodule says the module '" + id + "' is already defined.");
     if (!isArray(dependencies))
       throw new Error("moodle says the dependencies must be an array.");
