@@ -1,0 +1,28 @@
+{
+  "name": "moodulejs",
+  "version": "0.3.0",
+  "homepage": "https://github.com/smith-neil/moodulejs",
+  "authors": [
+    "Neil Smith"
+  ],
+  "description": "A small and simple module loader.",
+  "main": "moodule.min.js",
+  "moduleType": [
+    "amd",
+    "globals"
+  ],
+  "keywords": [
+    "module",
+    "loader",
+    "dependency",
+    "management"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
