@@ -4,6 +4,14 @@ describe('moodule', function () {
     moodule.clear();
   });
 
+  it('should create a global define function', function() {
+    expect(define).not.toBe(undefined);
+  });
+
+  it('should create a global require function', function() {
+    expect(require).not.toBe(undefined);
+  });
+
   describe('Describe: define', function () {
 
     it('should throw exception if id isnt a string', function () {

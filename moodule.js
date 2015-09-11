@@ -3,6 +3,9 @@
 
   this.moodule = factory();
 
+  this.define  = this.moodule.define;
+  this.require = this.moodule.require;
+
 })(function () {
 
   var instances         = {};
