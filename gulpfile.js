@@ -4,19 +4,19 @@ var gulp   = require('gulp'),
     uglify = require('gulp-uglify');
 
 gulp.task('patch', ['build'], function () {
-  return gulp.src('./package.json')
+  return gulp.src(['./package.json', './bower.json'])
     .pipe(bump({type: 'patch'}))
     .pipe(gulp.dest('./'));
 });
 
 gulp.task('minor', ['build'], function () {
-  return gulp.src('./package.json')
+  return gulp.src(['./package.json', './bower.json'])
     .pipe(bump({type: 'minor'}))
     .pipe(gulp.dest('./'));
 });
 
 gulp.task('major', ['build'], function () {
-  return gulp.src('./package.json')
+  return gulp.src(['./package.json', './bower.json'])
     .pipe(bump({type: 'major'}))
     .pipe(gulp.dest('./'));
 });
